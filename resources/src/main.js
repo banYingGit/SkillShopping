@@ -3,22 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Resource from 'vue-resource'
-import 'mint-ui/lib/style.css'
-import '../src/assets/style/newStyle.css'
+import store from './store'
 import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
 
-Vue.use(Resource)
-Vue.use(router)
-Vue.use(Mint)
 Vue.config.productionTip = false
-
-import {commonData} from '@/assets/javascript/common'
+Vue.use(Mint)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
-  template: '<App/>',
-  components: {App},
-  mixins: [commonData]
+  components: { App },
+  template: '<App/>'
 })

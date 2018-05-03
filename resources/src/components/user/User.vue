@@ -1,27 +1,21 @@
 <template>
-  <div>
-    <div class="user">
-
-      个人中心
-    </div>
-    <footer-menu :footerData="footerData"></footer-menu>
+  <div class="h100">
+    <footer-bar :footerData="footerData"></footer-bar>
   </div>
 </template>
-
 <script>
-  import FooterMenu from '@/components/common/FooterMenu'
+  import FooterBar from '../common/footer'
 
   export default {
-    name: 'Index',
+    components: {
+      FooterBar: FooterBar
+    },
     data: function () {
       return {
         footerData: {
-          menu: '3'
-        }
+          selected: 'user'
+        },
       }
-    },
-    components: {
-      FooterMenu: FooterMenu
     }
   }
 </script>

@@ -1,13 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/index/Index'
-/* 商品类 */
-import GoodsList from '@/components/goods/GoodsList'
-/* 个人中心 */
-import User from '@/components/user/User'
-import Login from '@/components/user/Login'
-import Register from '@/components/user/Register'
-import Forget from '@/components/user/Forget'
+import '../assets/script/auto.screen.js'
+import '../assets/css/style.css'
 
 Vue.use(Router)
 
@@ -15,33 +9,42 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/index'
+    },
+    {
+      path: '/index',
       name: 'Index',
-      component: Index
+      component: resolve => require(['../components/home/index'], resolve)
     },
     {
-      path: '/goodsList.html',
-      name: 'GoodsList',
-      component: GoodsList
+      path: '/play/way1',
+      name: 'PlayWay1',
+      component: resolve => require(['../components/home/playWay_1'], resolve)
     },
     {
-      path: '/user.html',
+      path: '/play/way2',
+      name: 'PlayWay2',
+      component: resolve => require(['../components/home/playWay_2'], resolve)
+    },
+    {
+      path: '/user',
       name: 'User',
-      component: User
+      component: resolve => require(['../components/user/user'], resolve)
     },
     {
-      path: '/login.html',
+      path: '/openPrize',
+      name: 'OpenPrize',
+      component: resolve => require(['../components/openPrize/openPrize'], resolve)
+    },
+    {
+      path: '/order',
+      name: 'Order',
+      component: resolve => require(['../components/order/order'], resolve)
+    },
+    {
+      path: '/login',
       name: 'Login',
-      component: Login
+      component: resolve => require(['../components/login/login'], resolve)
     },
-    {
-      path: '/register.html',
-      name: 'Register',
-      component: Register
-    },
-    {
-      path: '/forget.html',
-      name: 'Forget',
-      component: Forget
-    }
   ]
 })

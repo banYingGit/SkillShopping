@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vue-webPack.iml" filepath="$PROJECT_DIR$/.idea/vue-webPack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SkillShopping.iml" filepath="$PROJECT_DIR$/.idea/SkillShopping.iml" />
     </modules>
   </component>
 </project>
